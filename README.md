@@ -1,5 +1,5 @@
 ### Project Installation
-1. `git clone https://github.com/dv16sen/sequelize-typescript-express.git`
+1. `git clone https://github.com/dv16sen/typescript-graphql.git`
 2. Install [Node.js](https://nodejs.org/en/) if you don't have it already. You can check if you have it installed by writing `node -v` in a terminal (it should be version 8 or greater).
 3. `npm install` (can take several minutes)
 4. Install [XAMPP](https://www.apachefriends.org/index.html)
@@ -7,13 +7,13 @@
 ### Start developing
 1. Open XAMPP and start MySQL + Apache. You can then view the database under [localhost/phpmyadmin](http://localhost/phpmyadmin)
 2. `npm run dev`
+3. Open `localhost:8080/graphql` to interact with the graphiql interface.
 
 ### Project Structure:
 - **server**: Contains all backend code. Based on [express](https://expressjs.com/) and [sequelize-typescript](https://www.npmjs.com/package/sequelize-typescript).
     - **setup:** Files used for the initial server setup.
-    - **routes:** Defines the different API endpoints and what arguments they accept. The exported functions will automatically be fetched an called during the server setup.
-    - **request:** Defines what the different API endpoints does.
-    - **models:** Defines all the different database tables.
+    - **entities:** Contains the TypeORM entities. Can also be specified as object types and input types with help of TypeGraphQL.
+    - **resolvers:** Defines the different graphql resolvers which combined defines the schema.
     - **utils:** Contains other tools not fitting in the other categories.
 - **scripts**: All these files are automatically pulled and added as a program argument for [scripts.ts](./scripts.ts). All files under this folder should export an async function.
 
